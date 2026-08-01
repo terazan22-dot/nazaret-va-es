@@ -178,17 +178,19 @@ body {
   html body img.logo,
   html body .logo-area img,
   html body .logo {
-    width: auto !important;        /* El ancho gigante que querías */
-    height: 250px !important;
+    width: auto !important;   
+    max-width: 100%;
+    height: 220px !important;
     display: block !important;
-    margin: -20px 0 -20px -65px !important;   /* <- ESTO MUEVE LA IMAGEN HACIA ARRIBA/ABAJO para centrar solo el texto y la grúa */
+    margin: -15px 0 -10px 0px !important;   /* <- ESTO MUEVE LA IMAGEN HACIA ARRIBA/ABAJO para centrar solo el texto y la grúa */
   }
 
   /* 4. Botón de menú hamburguesa pegadito abajo */
   html body .menu-toggle,
   html body .hamburger,
   html body button {
-    margin: 2px 0 0 0 !important;
+    margin: -10px 0 0 0 !important;
+    align-self: center;
   }
 }
 /* =======================================================
