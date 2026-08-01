@@ -1718,6 +1718,10 @@ form textarea::placeholder {
     gap: 14px !important;
     width: 100%;
   }
+
+  .footer-bottom {
+    align-items: center;
+  }
 }
 
 
