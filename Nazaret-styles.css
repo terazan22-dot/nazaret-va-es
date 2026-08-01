@@ -136,29 +136,64 @@ body {
    ====================================================== */
 @media screen and (max-width: 1140px) {
   /* 1. Permite que el encabezado se ajuste en pantalla pequeña */
-  .main-header {
+  html body .header,
+  html body .main-header {
     height: auto !important;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+  }
+/* =======================================================
+   LOGO GIGANTE E IMPONENTE CON CERO ESPACIO BLANCO
+   ======================================================= */
+@media screen and (max-width: 1140px) {
+
+  /* 1. Contenedor general en columna, apretadísimo */
+  html body .nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 15px 0 0;
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* 2. Pasa el logo con su absolute a una posición normal para celular */
-  .logo-area {
+  /* 2. Caja contenedora del logo que ACTÚA COMO MÁSCARA de recorte */
+  html body .logo-area {
     position: static !important;
     transform: none !important;
-    text-align: center;
+    margin: 30px !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-height: 65px !important;  /* <- AQUÍ LIMITAMOS EL ALTO VISIBLE DE LA BARRA (puedes probar entre 55px y 70px) */
+    overflow: visible !important;    /* Esto corta y oculta mágicamente todo el aire blanco de arriba y abajo */
   }
 
-  /* 3. Reduce el logo solo en pantallas pequeñas */
-  .logo {
-    height: 70px !important;
-    margin: 0 auto;
+  /* 3. El logo a tus requeridos 250px (o el tamaño enorme que buscabas) */
+  html body img.logo,
+  html body .logo-area img,
+  html body .logo {
+    width: auto !important;        /* El ancho gigante que querías */
+    height: 250px !important;
+    display: block !important;
+    margin: -20px 0 -20px -65px !important;   /* <- ESTO MUEVE LA IMAGEN HACIA ARRIBA/ABAJO para centrar solo el texto y la grúa */
   }
 
-  /* 4. Acomoda el contenedor en columna (Logo arriba, menú abajo) */
-  .nav-container {
-    flex-direction: column !important;
-    padding: 10px !important;
-    gap: 10px;
+  /* 4. Botón de menú hamburguesa pegadito abajo */
+  html body .menu-toggle,
+  html body .hamburger,
+  html body button {
+    margin: 2px 0 0 0 !important;
   }
+}
+/* =======================================================
+   DISEÑO MÓVIL: Logo arriba imponente + Menú abajo
+   ======================================================= */
 
   /* 5. Organiza los enlaces en celular sin que se monten */
   .nav-links {
@@ -1661,3 +1696,5 @@ form textarea::placeholder {
     box-sizing: border-box;
   }
 }
+
+
