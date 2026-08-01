@@ -152,7 +152,7 @@ body {
   html body .nav-container {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     justify-content: space-between !important;
     padding: 0 15px 0 0;
     height: auto !important;
@@ -191,6 +191,18 @@ body {
   html body button {
     margin: -10px 0 0 0 !important;
     align-self: center;
+  }
+
+  /* 1. Mueve la foto hacia la derecha para que la laptop no toque el texto */
+  html body .hero-section {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.90) 65%,
+      rgba(255, 255, 255, 0.02) 100%
+    ), url('imagenes.img/casco.jpeg') !important;
+    background-position: 85% center !important; /* Empuja la laptop hacia la derecha fuera del texto */
+    background-size: cover !important;
   }
 }
 /* =======================================================
@@ -374,6 +386,48 @@ body {
     -webkit-hyphens: none;
 }
 
+@media screen and (max-width: 1140px) {
+
+  /* 5. Párrafo descriptivo: contenedor más estrecho + legibilidad sobre la laptop */
+  html body .hero-content p,
+  html body .hero h1,
+  html body .hero p,
+  html body .hero-description {
+    width: 95% !important;
+    max-width: 100%;
+    padding: 0 -30px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* 1. Centra la etiqueta de "ASISTENTE VIRTUAL..." */
+  html body .hero-content h1,
+  html body .hero-content,
+  html body .tag {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  /* 2. Centra el título principal */
+  html body .hero h1,
+  html body .hero-title {
+    text-align: center !important;
+  }
+
+  /* 3. Centra los botones de llamado a la acción */
+  html body .hero-actions {
+    display: flex !important;
+    flex-direction: column !important; /* Los apila para que se adapten mejor al celular */
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+
+  }
+}
+
+
 /* BOTONES */
 .hero-actions {
     display: flex;
@@ -549,7 +603,7 @@ body {
     font-size: 40px;
     color: #0d2238;
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
     font-weight: 800;
 }
 
@@ -1654,7 +1708,7 @@ form textarea::placeholder {
   .footer-container {
     flex-direction: column !important;
     gap: 20px !important;
-    align-items: flex-start !important;
+    align-items: center !important;
   }
 
   .footer-nav {
