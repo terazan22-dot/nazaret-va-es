@@ -151,8 +151,8 @@ body {
   /* 1. Contenedor general en columna, apretadísimo */
   html body .nav-container {
     display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     justify-content: space-between !important;
     padding: 0 15px 0 0;
     height: auto !important;
@@ -171,7 +171,7 @@ body {
     justify-content: center !important;
     align-items: center !important;
     max-height: 65px !important;  /* <- AQUÍ LIMITAMOS EL ALTO VISIBLE DE LA BARRA (puedes probar entre 55px y 70px) */
-    overflow: visible !important;    /* Esto corta y oculta mágicamente todo el aire blanco de arriba y abajo */
+    overflow: hidden !important;    /* Esto corta y oculta mágicamente todo el aire blanco de arriba y abajo */
   }
 
   /* 3. El logo a tus requeridos 250px (o el tamaño enorme que buscabas) */
@@ -1672,7 +1672,7 @@ form textarea::placeholder {
   .portfolio-hero-card,
   .estimate-card,
   .contact-card,
-  .footer-container {
+  .footer-container{
     width: 100%;
     max-width: 1200px;
     margin-left: auto;
