@@ -1,0 +1,1663 @@
+/* ==========================================================================
+   NAZARET VALERO - ARCHIVO CSS COMPLETAMENTE NUEVO (CORREGIDO)
+   ========================================================================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* 1. Barra superior con altura fija */
+.main-header {
+    z-index: 1000;
+    padding: 0;
+    height: 80px; /* Fijamos la altura de la barra para que no crezca */
+    position: relative;
+    background-color: #ffffff; /* Ajusta al color de tu cabecera */
+}
+
+/* 2. Contenedor que mantiene todo alineado */
+.nav-container {
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Mantiene la referencia para el logo */
+}
+
+/* 3. Área del logo liberada del tamaño de la barra */
+.logo-area {
+    position: absolute; /* ¡Clave! Lo saca del flujo para que no altere el alto de la barra */
+    left: 0px;
+    top: 60%;
+    transform: translateY(-50%); /* Centra el logo perfectamente con respecto a la barra */
+    z-index: 1001;
+}
+
+/* 4. Tu logo con el tamaño grande que necesitas */
+.logo {
+    height: 200px; /* Aquí le das el tamaño grande que quieras para que se lean perfecto las letras */
+    width: auto;
+    display: block;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08)); /* Sombra suave para que resalte si sobresale */
+}
+
+/* 5. Asegurar que los enlaces sigan a la derecha sin moverse */
+.nav-links {
+    margin-left: auto; /* Empuja el menú a la derecha */
+    display: flex;
+    gap: 3px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #111827 !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.93rem;
+    margin-left: 30px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #a38136 !important; /* Naranja Óxido */
+}
+
+/* Estilo principal del botón de WhatsApp */
+.nav-links a.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0d2238; /* Azul oscuro */
+    color: #ffffff !important; /* El !important asegura que las letras sean BLANCAS */
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+/* Forzar que el icono de Font Awesome también sea blanco */
+.nav-links a.whatsapp-btn i {
+    color: #ffffff !important;
+    font-size: 14px;
+}
+
+/* Efecto al pasar el cursor por encima (Hover) */
+.nav-links a.whatsapp-btn:hover {
+    background-color: #1a365d;
+    color: #a38136 !important;
+}
+/* Tamaño del icono de WhatsApp */
+.whatsapp-btn i {
+    font-size: 14px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid #0d2238;
+  color: #0d2238;
+  padding: 6px 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: #0d2238;
+  color: #ffffff;
+}
+
+/* ======================================================
+   SOLO PARA CELULARES (No altera nada en computadora)
+   ====================================================== */
+@media screen and (max-width: 1140px) {
+  /* 1. Permite que el encabezado se ajuste en pantalla pequeña */
+  .main-header {
+    height: auto !important;
+  }
+
+  /* 2. Pasa el logo con su absolute a una posición normal para celular */
+  .logo-area {
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+  }
+
+  /* 3. Reduce el logo solo en pantallas pequeñas */
+  .logo {
+    height: 70px !important;
+    margin: 0 auto;
+  }
+
+  /* 4. Acomoda el contenedor en columna (Logo arriba, menú abajo) */
+  .nav-container {
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 10px;
+  }
+
+  /* 5. Organiza los enlaces en celular sin que se monten */
+  .nav-links {
+    margin-left: 0 !important;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .nav-links a {
+    font-size: 11px !important;
+  }
+
+  .nav-links a.whatsapp-btn {
+    margin-left: 0 !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
+  }
+
+  .lang-btn {
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Oculta la barra superior emergente de Google Translate */
+.goog-te-banner-frame, .skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+
+/* ======================================================
+   BOTÓN HAMBURGUESA CORPORATIVO
+   ====================================================== */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid #0d2238; /* Borde azul marino elegante */
+  border-radius: 8px;
+  color: #0d2238;           /* Las tres rayitas en azul marino */
+  font-size: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background-color: #0d2238;
+  color: #ffffff;           /* Se invierte a fondo azul con rayitas blancas al pasar el cursor */
+}
+
+/* ======================================================
+   DESPLIEGUE DEL MENÚ MÓVIL
+   ====================================================== */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block; /* Muestra el botón en pantallas pequeñas */
+  }
+
+  /* Fondo Plateado Corporativo elegante con animación */
+  .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    
+    /* Color Plateado / Gris ejecutivo impecable */
+    background-color: #f1f5f9 !important; 
+    border-bottom: 3px solid #0d2238;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    gap: 15px;
+    
+    /* Oculto por defecto con animación suave */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+  }
+
+  /* Estado cuando se abre el menú */
+  .nav-links.open,
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    max-height: 600px;
+    padding: 25px 0 30px 0;
+  }
+
+  .nav-links a:not(.whatsapp-btn) {
+    width: 80%;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(13, 34, 56, 0.06);
+  }
+
+
+  /* Ajuste de margen para que los elementos queden alineados en columna */
+  .nav-links a,
+  .nav-links .lang-btn {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* --- SECCIÓN HERO CON FONDO Y DIFUMINADO --- */
+.hero-section {
+    position: relative;
+    padding: 100px 0;             /* Espaciado amplio arriba y abajo */
+    width: 100%;
+    
+    /* Carga de la imagen de fondo + El degradado difuminado a la izquierda */
+    background-image: 
+        linear-gradient(to right, 
+            #ffffff 18%,          /* Totalmente blanco hasta el 35% a la izquierda para leer bien */
+            rgba(255, 255, 255, 0.65) 38%, /* Comienza a transparentarse */
+            rgba(255, 255, 255, 0) 68%    /* 100% transparente a la derecha para ver la foto */
+        ),
+        url('imagenes.img/casco.jpeg'); /* Tu foto del casco */
+        
+    background-size: cover;       /* Ocupa todo el espacio disponible */
+    background-position: center right; /* Alinea la foto a la derecha */
+    background-repeat: no-repeat;
+}
+
+.hero-container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 3px;
+}
+
+.hero-content {
+    max-width: 580px;            /* Limita el ancho del texto dentro de la zona blanca difuminada */
+    text-align: left;
+}
+
+/* ESTILO DE LA PÍLDORA (HERO BADGE PILL) */
+.hero-badge-pill {
+    display: inline-block;
+    background-color: #e1e2e4;    /* Fondo suave de la píldora */
+    color: #556b82;               /* Color del texto */
+    padding: 8px 18px;            /* Relleno interno */
+    border-radius: 30px;          /* Forma de cápsula/píldora */
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
+    font-size: 44px;
+    line-height: 1.2;
+    color: #0d2238;
+    font-family: 'Playfair Display', serif, Georgia;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 17px;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: none;
+    -webkit-hyphens: none;
+}
+
+/* BOTONES */
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* --- ESTILO BASE DEL MENÚ FLOTANTE --- */
+
+.features-bar-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 30;            /* Asegura que quede POR ENCIMA de la foto y de About Me */
+    margin-top: 50px;
+    margin-bottom: -130px;   /* <--- ESTE VALOR LA HACE BAJAR. Si la quieres aún más abajo, pon -85px */
+}
+
+
+.features-bar {
+    /* Tono grisáceo/beige con más fuerza y opacidad */
+    background: rgba(225, 218, 208, 0.92); 
+    
+    /* Mantiene el desenfoque suave para el toque profesional */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-radius: 16px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    /* Borde sutil para darle contraste */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    
+    /* Sombra con más cuerpo para que resalte sobre el fondo */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #0d2238; /* Azul oscuro legible */
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.feature-item i {
+    font-size: 15px;
+    color: #0d2238;
+}
+
+.feature-divider {
+    width: 1px;
+    height: 18px;
+    background-color: #d8d0c5; /* Divisor en tono crema más oscuro */
+}
+
+
+/* ===================================================
+   CÓDIGO RESPONSIVE ÚNICAMENTE (@media)
+   =================================================== */
+
+/* Laptops pequeñas y Tablets horizontales */
+@media (max-width: 902px) {
+  .features-bar {
+    padding: 14px 15px;
+  }
+
+  .feature-item {
+    font-size: 12px;
+    gap: 6px;
+  }
+}
+
+/* Pantallas de celular y Tablets verticales */
+@media (max-width: 768px) {
+  .features-bar-wrapper {
+    margin-bottom: -100px;
+  }
+
+  .features-bar {
+    flex-wrap: wrap; /* Acomoda las píldoras en 2 filas */
+    gap: 8px;
+    justify-content: center;
+    padding: 12px;
+    background-color: #f5f0eb;
+  }
+
+  .feature-divider {
+    display: none; /* Oculta las líneas verticales en móvil */
+  }
+
+  .feature-item {
+    flex: 1 1 calc(50% - 10px); /* Hace que cada píldora mida exactamente la mitad del espacio */
+    box-sizing: border-box;
+    justify-content: center;
+    background-color: #ffffff; /* Píldoras blancas internas para móvil */
+    padding: 8px 4px;          /* Menos relleno a los lados para que quepa la palabra larga */
+    border-radius: 25px;
+    font-size: 11px;           /* Letra ligeramente más ajustada para que "Confidencialidad" entre perfecta */
+    white-space: nowrap;       /* Fuerza a que el texto no se rompa */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+  }
+}
+
+
+.btn-primary {
+    background-color: #0d2238;
+    color: #ffffff !important;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1a365d;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #0d2238 !important;
+    border: 1px solid #d0d7de;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #f8fafc;
+}
+
+/* --- SECCIÓN ABOUT ME --- */
+.about-section {
+    padding: 80px 20px;
+    background-color: #fcfbf9; /* Fondo suave de la página */
+}
+
+.about-container {
+    max-width: 1450px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* COLUMNA IZQUIERDA: TEXTO */
+.about-content {
+    flex: 1;
+    max-width: 750px;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px;
+    color: #0d2238;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 800;
+}
+
+.about-content p {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-weight: 300; /* <--- Esto le quita el aspecto de negrita pesada */
+    text-justify: inter-word;
+    max-width: 800px;
+    text-align: justify;
+}
+
+/* CONTENEDOR DE LA DERECHA */
+.about-image-wrapper {
+    flex: 0 0 300px; /* Le damos menos espacio proporcional para reducir tamaño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.about-image-wrapper img {
+    width: 340px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* LA TARJETA FLOTANTE (ESTILO MISIÓN/VISIÓN) */
+.about-photo-card {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 16px; /* Bordes redondeados suavemente */
+    max-width: none; /* <--- TAMAÑO REDUCIDO A LA MITAD */
+    width: auto;
+    
+    /* EL BORDE DORADO A LA IZQUIERDA QUE ME SEÑALASTE */
+    border-left: 6px solid #a38136; 
+    
+    /* Sombra suave e imperceptible para el efecto flotante */
+    box-shadow:none;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* LA FOTO DENTRO DE LA TARJETA */
+.about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 868px) {
+    .about-container {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-image-wrapper {
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    .about-image-wrapper img {
+        height: 360px;
+    }
+}
+
+/* ==========================================
+   SECCIÓN: MY SERVICES (Grid 3x2)
+   ========================================== */
+
+/* Contenedor principal de la sección */
+.services-section {
+    padding: 30px 20px;
+    
+    /* CAMBIO DE COLOR DE FONDO: Tono crema/arena sofisticado que contrasta con el blanco */
+    background-color: #fcfbf9; 
+    
+    text-align: center;
+    position: relative;
+
+}
+
+/* Título principal */
+.services-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px;
+    color: #0d2238;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Subtítulo */
+.services-subtitle {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    color: #4b525c;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* CUADRÍCULA: 3 COLUMNAS Y 2 FILAS */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea exactamente 3 columnas iguales */
+    gap: 25px;                            /* Espacio uniforme entre tarjetas */
+    max-width: 1450px;                    /* Ancho ideal para acomodar las 3 tarjetas */
+    width: 100%;
+    margin: 0 auto;                       /* Centra la cuadrícula en la pantalla */
+}
+
+/* ESTILO DE CADA TARJETA CON EL BORDE DORADO LATERAL */
+.service-card {
+    background-color: #ffffff;
+    padding: 28px 22px;
+    border-radius: 12px; /* Bordes redondeados finos */
+    
+    /* EL DETALLE DORADO LATERAL (Igual al estilo de la foto) */
+    border-left: 5px solid #a38136 ; /* Puedes ajustar este código hexadecimal a tu tono dorado exacto */
+    
+    /* Bordes sutiles para los otros 3 lados */
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    border-right: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    
+    /* Sombra suave e imperceptible para el efecto flotante */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE (Hover elegante) */
+.service-card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08); /* La sombra se acentúa */
+}
+
+/* Iconos */
+.service-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+/* Título de la tarjeta */
+.service-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #0d2238;
+    margin-bottom: 10px;
+}
+
+/* Párrafo interno */
+.service-card p {
+    font-family: Georgia, serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+    font-weight: 400 !important;
+}
+
+/* ADAPTACIÓN MÓVIL Y TABLET */
+@media (max-width: 992px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .services-container {
+        grid-template-columns: 1fr; /* 1 columna en teléfonos */
+    }
+}
+
+/* ==========================================
+   PORTFOLIO SECTION (Fondo Blanco y 2x2)
+   ========================================== */
+
+/* Fondo blanco exclusivo para esta sección */
+.services-section.bg-white {
+  background-color:#fcfbf9!important;
+}
+
+.portfolio-hero-header {
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important; /* Nos aseguramos de que no esté en 'none' */
+  text-align: center !important;
+  margin-bottom: 30px !important;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
+}
+
+/* Fuerza la cuadrícula de 2 arriba / 2 abajo */
+.portfolio-2x2 {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 35px !important;
+  margin-top: 30px !important;
+}
+
+/* Estilo y dimensiones de las tarjetas */
+.portfolio-2x2 .service-card {
+  padding: 35px 30px !important;
+  min-height: 220px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
+}
+
+/* Estilo del botón / enlace */
+.portfolio-btn {
+  display: inline-block !important;
+  margin-top: 15px !important;
+  font-size: 0.95rem !important;
+  font-weight: bold !important;
+  color: #1b365d !important;
+  text-decoration: none !important;
+}
+
+.portfolio-btn:hover {
+  color: #a38136 !important;
+
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .portfolio-2x2 {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* ==========================================
+   ESTILOS EXCLUSIVOS PARA LA TARJETA 5 (WEB)
+   ========================================== */
+
+/* Etiqueta superior "LIVE WEBSITE PROJECT" */
+.featured-badge {
+  display: inline-block !important;
+  font-size: 0.75rem !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  color: #a38136  !important;
+  background-color: #f7f5f0 !important;
+  padding: 5px 12px !important;
+  border-radius: 20px !important;
+  margin-bottom: 15px !important;
+  text-transform: uppercase !important;
+}
+
+.featured-content h3 {
+  font-size: 1.35rem !important;
+  color: #1b365d !important;
+  margin-bottom: 10px !important;
+  font-weight: bold !important;
+}
+
+.featured-content p {
+  font-size: 0.98rem !important;
+  color: #555555 !important;
+  max-width: 750px !important;
+  margin: 0 auto 20px auto !important;
+  line-height: 1.6 !important;
+}
+
+/* Botón azul base */
+.portfolio-btn-featured,
+.portfolio-btn-featured:visited {
+  display: inline-block !important;
+  padding: 10px 22px !important;
+  font-size: 0.95rem !important;
+  font-weight: bold !important;
+  color: #ffffff !important; /* Texto blanco siempre */
+  background-color: #1b365d !important; /* Fondo azul fijo */
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  transition: color 0.25s ease, transform 0.25s ease !important;
+}
+
+
+/* Estado al pasar el cursor (Hover) */
+.portfolio-btn-featured:hover,
+a.portfolio-btn-featured:hover {
+  background-color: #1b365d !important; /* Se mantiene en el mismo azul exacto */
+  color: #a38136 !important; /* Fuerza el cambio de color del texto al dorado */
+}
+
+/* Tarjeta destacada de la página web (Con sombra estática y sin elevación) */
+.featured-project-card {
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 35px 30px !important;
+  margin-top: 35px !important;
+  text-align: center !important;
+  border-left: 5px solid #a38136 !important; /* Borde dorado lateral */
+  position: relative !important;
+  
+  /* Sombra suave que la separa del fondo blanco */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11) !important;
+}
+
+/* Responsive para dispositivos móviles (Celulares) */
+@media (max-width: 768px) {
+  
+  /* Ajustes para la tarjeta del proyecto web */
+  .featured-project-card {
+    padding: 25px 20px !important; /* Reduce el relleno interno */
+    margin-top: 25px !important;    /* Espacio superior más ajustado */
+  }
+
+  .featured-content h3 {
+    font-size: 1.2rem !important;  /* Tamaño de título cómodo para pantallas pequeñas */
+  }
+
+  .featured-content p {
+    font-size: 0.9rem !important;   /* Texto de descripción adaptado */
+    margin-bottom: 15px !important;
+  }
+
+  .portfolio-btn-featured {
+    width: 100% !important;         /* Hace que el botón ocupe todo el ancho en celular */
+    text-align: center !important;
+    padding: 12px 15px !important;  /* Un poco más de área táctil para facilitar el clic */
+  }
+}
+
+/* ==========================================
+   MARCO PRINCIPAL CON EDIFICIO Y TARJETAS TRANSLÚCIDAS
+   ========================================== */
+
+/* 1. Contenedor principal con la foto del edificio de fondo */
+.portfolio-hero-card {
+  position: relative !important;
+  border-radius: 24px !important;
+  padding: 55px 40px !important;
+  overflow: hidden !important;
+  
+  /* Carga la imagen 'negro.jpg' con un filtro oscuro transparente por encima */
+  background: linear-gradient(rgba(15, 20, 28, 0.35), rgba(15, 20, 28, 0.35)), 
+              url(imagenes.img/negro.jpeg) no-repeat center center / cover !important;
+  background-attachment: fixed !important; /* <--- Esta línea crea el movimiento al hacer scroll */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Textos del encabezado superior */
+.portfolio-tag {
+  display: inline-block !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  letter-spacing: 1.5px !important;
+  color: #a38136 !important;
+  margin-bottom: 10px !important;
+  text-transform: uppercase !important;
+}
+
+.portfolio-hero-title {
+  color: #ffffff !important;
+  font-size: 2.1rem !important;
+  font-weight: bold !important;
+  margin-bottom: 12px !important;
+}
+
+.portfolio-hero-subtitle {
+  color: #d1d5db !important;
+  font-size: 0.98rem !important;
+  max-width: 650px !important;
+  margin: 0 auto 35px auto !important;
+}
+
+/* EFECTO DE DESENFOQUE Y FONDO PARA EL MARCO */
+.portfolio-hero-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: url(imagenes.img/negro.jpeg) no-repeat center center / cover !important;
+  background-attachment: fixed !important;
+  filter: blur(3px) brightness(1.2) !important; /* Desenfoca 4px el edificio y le da brillo */
+  z-index: 0 !important;
+}
+
+/* 2. Tarjetas internas translúcidas (Efecto Glassmorphism como José Obras) */
+.dark-card {
+  background-color: rgba(255, 255, 255, 0.14) !important; /* Cristal ahumado transparente */
+  backdrop-filter: blur(10px) !important; /* Difumina sutilmente el edificio detrás */
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important; /* Borde de cristal suave */
+  border-left: 4px solid #a38136 !important; /* Acento dorado característico */
+}
+
+/* Textos dentro de las tarjetas */
+.dark-card h3 {
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+.dark-card p {
+  color: #e2e8f0 !important;
+}
+
+/* Enlaces View Document */
+.dark-card .portfolio-btn {
+  color: #f0c05a !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  transition: color 0.2s ease !important;
+}
+
+.dark-card .portfolio-btn:hover {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   SECCIÓN FREE ESTIMATE (COMPLETO)
+   ========================================== */
+.estimate-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f6f8;
+  box-sizing: border-box;
+}
+
+.estimate-card {
+  max-width: 1450px;
+  width: 100%;
+  background: #faf7f2;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ebe5d8;
+  box-sizing: border-box;
+}
+
+/* 1. LADO IZQUIERDO: IMAGEN + DEGRADADO DORADO DIAGONAL */
+.estimate-image-wrapper {
+  width: 42%;
+  position: relative;
+  min-height: 480px;
+  box-sizing: border-box;
+  filter: drop-shadow(6px 0 10px rgba(0, 0, 0, 0.22));
+}
+
+.estimate-image-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 6px; /* Fina franja para lucir el degradado */
+  filter: drop-shadow(2px 0 8px rgba(0,0,0,.08));
+  background-image: url('imagenes.img/freestimate.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+  z-index: 2;
+}
+
+/* Reemplaza solo la capa del difuminado por esta: */
+.estimate-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* 2. LADO DERECHO: TEXTO Y CONTENIDO RESPONSIVO */
+.estimate-text-side {
+  width: 58%;
+  padding: 40px 35px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.badge-estimate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f2e9d8;
+  color: #b8860b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.estimate-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  color: #0d1b2a;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.estimate-desc {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+/* CARACTERÍSTICAS (APILADAS PARA EVITAR DESBORDAMIENTO) */
+.estimate-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  background: #f0e6d2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.feature-item h3 {
+  font-size: 0.88rem;
+  color: #0d1b2a;
+  margin: 0 0 2px 0;
+  font-weight: 700;
+}
+
+.feature-item p {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* BOTÓN Y FOOTER */
+.estimate-action-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-estimate {
+  background-color: #0b192c;
+  color: #ffffff;
+  padding: 13px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-estimate:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+}
+
+.footer-tag-container {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.estimate-footer-tag {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.gold-brush-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+/* ==========================================
+   ADAPTACIÓN MÓVIL (RESPONSIVE) - FREE ESTIMATE
+   ========================================== */
+@media (max-width: 900px) {
+  .estimate-card {
+    flex-direction: column;
+  }
+
+  .estimate-image-wrapper {
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .gold-border,
+  .estimate-image-side {
+    clip-path: none;
+    right: 0;
+  }
+
+  .gold-border {
+    height: 4px;
+    top: auto;
+    bottom: 0;
+    background: linear-gradient(90deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+  }
+
+  .estimate-image-side {
+    bottom: 4px;
+  }
+
+  /* --- AJUSTES DE CONTENEDOR Y CÁPSULAS PARA MÓVIL --- */
+  .estimate-text-side {
+    width: 100% !important;
+    padding: 24px 12px !important; /* Espaciado interno seguro */
+    box-sizing: border-box;
+  }
+
+  .estimate-features {
+    width: 100% !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .feature-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 8px !important; /* Mantiene la forma limpia de cápsula */
+    background: #ffffff;
+    border-radius: 20px;
+    gap: 8px;
+    margin: 0 !important;
+  }
+
+  .feature-item p {
+    font-size: 0.8rem !important; /* Ajusta la letra para que el texto fluya sin salirse */
+    line-height: 1.3;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+}
+
+/* ==========================================
+   SECCIÓN DE CONTACTO
+   ========================================== */
+.contact-section {
+  padding: 80px 20px;
+  background-color: #fcfbf9;
+}
+
+.contact-tag {
+  background-color: #f2e9d8 !important; /* El color gris clarito/suave de la píldora */
+  color: #c29b38 !important;            /* El texto en tono dorado */
+  box-shadow: none !important;           /* Quita la sombra marcada */
+  border: none !important;               /* Sin bordes marcados */
+  border-radius: 20px !important;        /* Curva totalmente los bordes en forma de cápsula */
+  padding: 6px 16px !important;          /* Le da el espacio interno adecuado */
+  display: inline-block !important;      /* Asegura que tome la forma del texto */
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+}
+
+.contact-card {
+  max-width: 1450px;
+  margin: 0 auto;
+  background: #f5f5f3; /* Tono crema beige claro exacto de la referencia */
+  border-radius: 24px;
+  padding: 55px;
+  display: grid;
+  grid-template-columns: 1fr auto 1.2fr;
+  gap: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================
+   CAMPOS DEL FORMULARIO DE CONTACTO
+   ========================================== */
+.contact-card input,
+.contact-card textarea,
+.contact-form input,
+.contact-form textarea,
+form input,
+form textarea {
+  width: 100% !important;
+  background-color: #ffffff !important; /* Blanco puro para destacar sobre el crema */
+  border: 1.5px solid #cbd5e1 !important; /* Borde gris suave bien definido */
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+  font-size: 0.95rem !important;
+  color: #0b132b !important;
+  outline: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.25s ease !important;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.contact-card input:hover,
+.contact-card textarea:hover,
+form input:hover,
+form textarea:hover {
+  border-color: #94a3b8 !important;
+}
+
+/* Efecto al hacer clic para escribir (Focus) */
+.contact-card input:focus,
+.contact-card textarea:focus,
+form input:focus,
+form textarea:focus {
+  border-color: #b8860b !important; /* Borde dorado */
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.18) !important; /* Halo dorado suave */
+}
+
+/* Color del texto de ayuda (Placeholder) */
+.contact-card input::placeholder,
+.contact-card textarea::placeholder,
+form input::placeholder,
+form textarea::placeholder {
+  color: #94a3b8 !important;
+  font-size: 0.9rem !important;
+}
+
+.contact-tag {
+  color: #b8860b;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  color: #0b132b;
+  margin: 10px 0 15px 0;
+  font-weight: 700;
+}
+
+.contact-desc {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 35px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.info-icon {
+  width: 46px;
+  height: 46px;
+  background: #f1ebd9; /* Círculo beige suave de los iconos */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-item strong {
+  display: block;
+  color: #0b132b;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.info-item p {
+  color: #475569;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.sub-text {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: #0b132b;
+  color: #ffffff !important;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  transition: opacity 0.2s;
+}
+
+.btn-whatsapp:hover {
+  opacity: 0.9;
+}
+
+.security-note {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Divisor Vertical */
+.contact-divider {
+  width: 1px;
+  background-color: #e2e8f0;
+  height: 100%;
+}
+
+/* Estilos del Formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0b132b;
+  margin-bottom: 6px;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 0.9rem;
+  color: #0b132b;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  border-color: #b8860b;
+}
+
+.btn-send {
+  background: #0b132b;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 5px;
+  transition: opacity 0.2s;
+}
+
+.btn-send:hover {
+  opacity: 0.9;
+}
+
+.form-note {
+  font-size: 1rem;
+  color: #64748b; /* Gris suave */
+  margin-top: 10px;
+  margin-left: 4px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================
+   ADAPTACIÓN MÓVIL (RESPONSIVE) - CONTACTO
+   ========================================== */
+@media (max-width: 900px) {
+  /* 1. Cambia el grid a una sola columna vertical */
+  .contact-card {
+    grid-template-columns: 1fr !important;
+    padding: 30px 20px !important;
+    gap: 30px !important;
+  }
+
+  /* Solo para celulares: rompe el correo largo para que no se salga */
+.contact-section p, 
+.contact-section a,
+.contact-item span {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+  /* 2. Oculta la línea divisoria vertical */
+  .contact-divider {
+    display: none !important;
+  }
+
+  /* 3. Pasa los campos del formulario (Nombre / Correo) a 1 sola columna */
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* 4. Asegura que inputs y textareas no superen el ancho disponible */
+  .contact-card input,
+  .contact-card textarea,
+  .form-group input,
+  .form-group textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 5. Ajuste opcional para centrar o expandir el botón de enviar en celular */
+  .btn-send {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================== */
+.main-footer {
+  background: #0b132b;
+  color: #ffffff;
+  padding: 45px 20px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-monogram {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #b8860b;
+  line-height: 1;
+}
+
+.brand-text h3 {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.brand-text span {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: #b8860b;
+}
+
+.footer-social {
+  text-align: right;
+}
+
+.footer-social > span {
+  font-size: 0.85rem;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #b8860b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8860b;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+.social-icons a:hover {
+  background: #b8860b;
+  color: #0b132b;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* ==========================================
+   ADAPTACIÓN MÓVIL (SOLO PARA CELULAR)
+   ========================================== */
+@media (max-width: 900px) {
+
+  /* --- Tus reglas previas de la sección de contacto van aquí --- */
+
+  /* --- FOOTER: Solo se activa en pantallas pequeñas --- */
+  .footer-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap !important;
+    gap: 12px 20px !important;
+  }
+}
+
+
+/* =======================================================
+   ALINEACIÓN GLOBAL Y FIX DE ZOOM PARA PANTALLAS GRANDES
+   ======================================================= */
+@media (min-width: 901px) {
+  .hero-container,
+  .about-container,
+  .services-container,
+  .portfolio-hero-card,
+  .estimate-card,
+  .contact-card,
+  .footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero-section,
+  .main-footer{
+    width: 100%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}

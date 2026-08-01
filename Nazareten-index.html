@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Nazaret Valero | Construction Virtual Assistant</title>
+    <!-- Tipografía Profesional Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- CONEXIÓN CON EL CSS -->
+    <link rel="stylesheet" href="Nazaret-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1. BARRA DE NAVEGACIÓN SUPERIOR -->
+<!-- 1. BARRA DE NAVEGACIÓN SUPERIOR -->
+<header class="main-header">
+  <div class="nav-container">
+    
+    <div class="logo-area">
+      <img src="imagenes.img/logo.jpeg" alt="Nazaret Valero Logo" class="logo">
+    </div>
+
+    <!-- Botón hamburguesa con su función de clic -->
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menú desplegable -->
+    <nav class="nav-links" id="nav-links">
+      <a href="#hero" data-i18n="navHome" aria-label="Inicio" onclick="closeMenu()">Main</a>
+      <a href="#about" data-i18n="navAbout" onclick="closeMenu()">About Me</a>
+      <a href="#services" data-i18n="navServices" onclick="closeMenu()">Services</a>
+      <a href="#portfolio" data-i18n="navPortfolio" onclick="closeMenu()">Projects</a>
+      <a href="#free-estimate" data-i18n="navEstimate" onclick="closeMenu()">Free Estimate</a>
+      <a href="#contact" data-i18n="navContact" onclick="closeMenu()">Contact</a>
+
+      <!-- Botones de acción integrados para que bajen en el menú móvil -->
+      <a href="https://wa.me/573196972645" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+
+      <a href="Nazaretes-index.html" class="lang-btn">
+  🌐  <span id="lang-text">ES</span>
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- 2. SECCIÓN HERO -->
+<section id="hero" class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Píldora destacada -->
+            <div class="hero-badge-pill">CONSTRUCTION VIRTUAL ASSISTANT</div>
+            
+            <h1>Operational optimization for contractors</h1>
+            
+            <p>I help construction businesses stay organized with professional administrative support, accurate estimates, custom Excel solutions, and efficient client communication—so you can focus on growing your business.</p>
+            
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">
+                    Optimize My Business <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://wa.me/573196972645" target="_blank" class="btn-secondary">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+        <!-- CINTA FLOTANTE DE CARACTERÍSTICAS (PÍLDORAS) -->
+<div class="features-bar-wrapper">
+    <div class="features-bar">
+        <div class="feature-item">
+            <i class="fas fa-calendar-check"></i>
+            <span>Organization</span>
+        </div>
+        <div class="feature-divider"></div>
+        
+        <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Accuracy</span>
+        </div>
+        <div class="feature-divider"></div>
+        
+        <div class="feature-item">
+            <i class="fas fa-lock"></i>
+            <span>Confidentiality</span>
+        </div>
+        <div class="feature-divider"></div>
+        
+        <div class="feature-item">
+            <i class="fas fa-award"></i>
+            <span>Commitment</span>
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
+
+<!-- 3. SECCIÓN ACERCA DE MÍ -->
+<section id="about" class="about-section">
+    <div class="about-container">
+        
+        <!-- Columna Izquierda: Texto directo sobre la página -->
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I am an Administrative Technologist with over 8 years of experience supporting business operations, quotation preparation, document management, Excel workflows and client communication.</p>
+            <p>In addition, I have practical experience developing simple, modern and responsive websites, allowing me to support businesses not only with their administrative processes but also by strengthening their digital presence through functional web solutions.</p>
+            <p>Today, I help contractors and construction companies save time, stay organized and improve their daily operations through reliable and efficient remote administrative support.</p>
+            <p>My goal is simple: to handle your administrative tasks so you can focus on growing your business.</p>
+            <p>I am committed to organization, efficiency and building long-term professional relationships based on trust, responsibility and quality service.</p>
+        </div>
+
+        <!-- Columna Derecha: Foto metida en su tarjeta flotante compacta -->
+        <div class="about-image-wrapper">
+        <div class="about-photo-card">
+        <img src="imagenes.img/naza.jpg" alt="Nazaret Valero" class="about-photo">
+    </div>
+</div>
+</section>
+
+<section id="services" class="services-section">
+    
+    <!-- TÍTULOS DE LA SECCIÓN (Asegúrate de tener este bloque arriba de las tarjetas) -->
+    <h2 class="services-title">My Services</h2>
+    <p class="services-subtitle">Tailored administrative support to your construction business</p>
+
+    <!-- CONTENEDOR DE LAS 6 TARJETAS EN VERTICAL -->
+    <div class="services-container">
+
+        <!-- 1. Cotizaciones -->
+        <div class="service-card">
+            <div class="service-icon">📋</div>
+            <h3>Estimating & Budget Processing</h3>
+            <p>Organizing provided rates, costs, and client data into clear, professional estimates and proposals.</p>
+        </div>
+
+        <!-- 2. Excel / Datos -->
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Data Entry & Operational Control</h3>
+            <p>Structuring project receipts, expenses, and supplier records provided by you into organized Excel files.</p>
+        </div>
+
+        <!-- 3. Gestión Documental -->
+        <div class="service-card">
+            <div class="service-icon">📁</div>
+            <h3>Document Management</h3>
+            <p>Organized files, invoices, and administrative paperwork for smooth operations.</p>
+        </div>
+
+        <!-- 4. Correo y WhatsApp -->
+        <div class="service-card">
+            <div class="service-icon">✉️</div>
+            <h3>Email & WhatsApp Management</h3>
+            <p>Professional, timely communication with clients and vendors to keep projects moving.</p>
+        </div>
+
+        <!-- 5. Calendario -->
+        <div class="service-card">
+            <div class="service-icon">📅</div>
+            <h3>Calendar & Appointments</h3>
+            <p>Virtual meeting setups, key deadline reminders, and seamless coordination with vendors and subcontractors.</p>
+        </div>
+
+        <!-- 6. Web & Soporte -->
+        <div class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>Web Presence & General Support</h3>
+            <p>Basic website creation for small businesses and digital support as needed.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION: FEATURED WORK / PORTFOLIO -->
+<section id="portfolio" class="services-section bg-white">
+  <div class="container">
+    
+    <!-- TARJETA MARCO PRINCIPAL (Estilo José Obras) -->
+    <div class="portfolio-hero-card">
+      
+      <div class="portfolio-hero-header">
+        <span class="portfolio-tag">OUR SPECIALTY</span>
+        <h2 class="portfolio-hero-title">Featured Work & Sample Documents</h2>
+        <p class="portfolio-hero-subtitle">
+          Examples of administrative documents and construction workflows prepared with professional standards.
+        </p>
+      </div>
+
+      <!-- Cuadrícula 2x2 para las 4 tarjetas de documentos -->
+      <div class="services-grid portfolio-2x2">
+        
+        <div class="service-card dark-card">
+          <div class="card-icon">📋</div>
+          <h3>Construction Quotation</h3>
+          <p>Detailed cost estimation, terms of payment, and labor scope breakdown for finishing projects.</p>
+          <a href="documentos.docs/english.docs/AustinTXquote.xlsx" target="_blank" class="portfolio-btn">View Document &rarr;</a>
+        </div>
+
+        <div class="service-card dark-card">
+          <div class="card-icon">📊</div>
+          <h3>Progress Report</h3>
+          <p>Site execution tracking, completed milestones, material logs, and upcoming project deliverables.</p>
+          <a href="documentos.docs/english.docs/CONSTRUCTION PROGRESS REPORT.pdf" target="_blank" class="portfolio-btn">View Document &rarr;</a>
+        </div>
+
+        <div class="service-card dark-card">
+          <div class="card-icon">📑</div>
+          <h3>Project Budget & BOQ</h3>
+          <p>Comprehensive cost breakdown, unit price analysis, and structural material quantity takeoffs.</p>
+          <a href="documentos.docs/english.docs/MRJOBSTENDER.xlsx" target="_blank" class="portfolio-btn">View Document &rarr;</a>
+        </div>
+
+        <div class="service-card dark-card">
+          <div class="card-icon">📁</div>
+          <h3>Project Proposal - Villa Serena</h3>
+          <p>Structured administrative and cost proposal tailored for residential development projects.</p>
+          <a href="documentos.docs/english.docs/Villa-Serena-proposal.odt" target="_blank" class="portfolio-btn">View Document &rarr;</a>
+        </div>
+
+      </div>
+
+      <!-- Tarjeta 5: Proyecto Web en vivo -->
+      <div class="featured-project-card dark-card">
+        <div class="featured-badge">WEB PROJECT</div>
+        <div class="featured-content">
+          <div class="card-icon">🌐</div>
+          <h3>Web Presence & General Support</h3>
+          <p>Responsive website designed for contractors and small businesses. Features clear service presentations and instant mobile contact options.</p>
+          <a href="https://obras-remodelaciones.ejvalero10.workers.dev/" target="_blank" class="portfolio-btn-featured">View Website &rarr;</a>
+        </div>
+      </div>
+
+    </div> <!-- FIN DE PORTFOLIO-HERO-CARD -->
+
+  </div>
+</section>
+
+<!-- SECCIÓN FREE ESTIMATE (IMAGEN IZQUIERDA) -->
+<section id="free-estimate" class="estimate-section">
+  <div class="estimate-card">
+    
+    <!-- 1. Lado Izquierdo: Imagen con Corte Diagonal -->
+    <div class="estimate-image-wrapper">
+      <div class="gold-border"></div>
+      <div class="estimate-image-side"></div>
+    </div>
+
+    <!-- 2. Lado Derecho: Textos y Botón -->
+    <div class="estimate-text-side">
+      <div class="badge-estimate">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+          <line x1="8" y1="6" x2="16" y2="6"></line>
+          <line x1="16" y1="14" x2="16" y2="18"></line>
+          <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"></path>
+        </svg>
+        FREE ESTIMATE
+      </div>
+
+      <h2 class="estimate-title">Need a Preliminary Estimate?</h2>
+      
+      <p class="estimate-desc">
+        Share the key details of your project and <strong>I'll prepare</strong> 
+        a clear, organized estimate tailored to your needs — 
+        <strong>no commitment required.</strong>
+      </p>
+
+      <div class="estimate-features">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <path d="M9 15h6"></path>
+            </svg>
+          </div>
+          <h3>Clear & Organized</h3>
+          <p>Professional documents with accurate information.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3>Fast Response</h3>
+          <p>You'll receive it within 24 business hours.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <h3>Confidential</h3>
+          <p>Your information is 100% protected.</p>
+        </div>
+      </div>
+
+      <div class="estimate-action-wrapper">
+        <a href="#contact" class="btn-estimate">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          Request a Free Estimate &rarr;
+        </a>
+
+        <div class="footer-tag-container">
+          <p class="estimate-footer-tag">Plan your project with our support.</p>
+          <div class="gold-brush-line"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECCIÓN DE CONTACTO -->
+<section class="contact-section" id="contact">
+  <div class="contact-card">
+    
+    <!-- Columna Izquierda: Información de contacto -->
+    <div class="contact-info">
+      <span class="contact-tag">GET IN TOUCH</span>
+      <h2 class="contact-title">Let’s Work Together</h2>
+      <p class="contact-desc">
+        Let's discuss how I can support your construction business with reliable remote administrative assistance.
+      </p>
+
+      <div class="info-list">
+        <!-- Email -->
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <p>valeronazaretassistant@gmail.com</p>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>+57 319 697 2645</p>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Location</strong>
+            <p>Medellín, Colombia<br><span class="sub-text">Available for remote work</span></p>
+          </div>
+        </div>
+
+        <!-- Working Hours & Response Time -->
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong>Core Working Hours</strong>
+            <p>Mon – Fri: 8:00 AM – 12:00 PM (COT / UTC-5)<br>
+            <span class="sub-text">Part-time support • Messages are welcome anytime. I reply during business hours.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/573196972645" target="_blank" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;"><path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.483 1.332 5.003l-1.417 5.176 5.297-1.389c1.472.802 3.137 1.222 4.781 1.222 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.834 14.161c-.247.693-1.221 1.282-1.996 1.448-.528.113-1.218.204-3.535-.757-2.966-1.229-4.872-4.248-5.02-4.444-.147-.197-1.201-1.602-1.201-3.056 0-1.454.757-2.17 1.026-2.463.269-.293.588-.366.783-.366.196 0 .392.001.563.01.183.009.429-.069.672.514.247.593.842 2.054.915 2.203.073.149.122.322.024.516-.098.196-.147.319-.293.491-.147.172-.31.385-.443.518-.147.147-.301.307-.129.602.172.295.765 1.263 1.642 2.045 1.129 1.004 2.08 1.315 2.375 1.462.295.147.466.122.638-.073.172-.196.735-.857.931-1.151.196-.295.392-.245.662-.147.269.098 1.716.809 2.01 1.054.295.245.295.589.048 1.282z"/></svg>
+        Connect on WhatsApp
+      </a>
+
+      <p class="security-note">
+        🛡️ Confidentiality and professionalism guaranteed
+      </p>
+    </div>
+
+    <!-- Divisor de Línea Vertical -->
+    <div class="contact-divider"></div>
+
+    <!-- Columna Derecha: Formulario -->
+    <div class="contact-form-container">
+      <form class="contact-form" action="https://formspree.io/f/xlgqovov" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Please enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Your Email</label>
+            <input type="email" name="email" placeholder="Please enter your email" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" name="company" placeholder="Please enter your company name">
+        </div>
+
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" name="subject" placeholder="How may I assist you?">
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Please describe your project or administrative needs..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+
+<!-- Nota de confianza debajo del botón -->
+<p class="form-note">
+  I'll get back to you as soon as possible during business hours.
+</p>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- PIE DE PÁGINA (FOOTER) -->
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <!-- Branding -->
+    <div class="footer-brand">
+     <span class="brand-monogram notranslate" translate="no">NV</span>
+      <div class="brand-text">
+        <h3>NAZARET VALERO</h3>
+        <span>CONSTRUCTION VIRTUAL ASSISTANT</span>
+      </div>
+    </div>
+
+    <!-- Links de Navegación -->
+    <ul class="footer-nav">
+      <li><a href="#hero" aria-label="Inicio">Main</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#free-estimate">Free Estimate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+       <!-- Contacto Directo: WhatsApp y Email (Iconos Circulares) -->
+    <div class="footer-social">
+      <span>Let's connect</span>
+      <div class="social-icons">
+        <!-- Icono WhatsApp Circular -->
+        <a href="https://wa.me/573196972645" target="_blank" title="WhatsApp" class="btn-footer-circle btn-wa-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff"><path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.483 1.332 5.003l-1.417 5.176 5.297-1.389c1.472.802 3.137 1.222 4.781 1.222 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.834 14.161c-.247.693-1.221 1.282-1.996 1.448-.528.113-1.218.204-3.535-.757-2.966-1.229-4.872-4.248-5.02-4.444-.147-.197-1.201-1.602-1.201-3.056 0-1.454.757-2.17 1.026-2.463.269-.293.588-.366.783-.366.196 0 .392.001.563.01.183.009.429-.069.672.514.247.593.842 2.054.915 2.203.073.149.122.322.024.516-.098.196-.147.319-.293.491-.147.172-.31.385-.443.518-.147.147-.301.307-.129.602.172.295.765 1.263 1.642 2.045 1.129 1.004 2.08 1.315 2.375 1.462.295.147.466.122.638-.073.172-.196.735-.857.931-1.151.196-.295.392-.245.662-.147.269.098 1.716.809 2.01 1.054.295.245.295.589.048 1.282z"/></svg>
+        </a>
+        
+        <!-- Icono Email Circular con enlace directo -->
+    <!-- Abre directamente la pantalla de redacción de Gmail -->
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=valeronazaretassistant@gmail.com" target="_blank" title="Email" class="btn-footer-circle">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="2">
+    <rect x="2" y="4" width="20" height="16" rx="2"/>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+</a>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+    <p>© 2026 Nazaret Valero | All rights reserved</p>
+  </div>
+</footer>
+    <!-- CONEXIÓN CON EL JAVASCRIPT -->
+    <script src="Nazaret-script.js"></script>
+</body>
+</html>
