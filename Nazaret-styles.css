@@ -1760,4 +1760,65 @@ form textarea::placeholder {
   }
 }
 
+/* ==========================================
+   ESTILOS PÁGINAS LEGALES (legal-container)
+   ========================================== */
+
+/* Versión Móvil (Mobile-First por defecto) */
+.legal-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 20px; /* Margen interno para que no pegue a los bordes del celular */
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Título Principal */
+.legal-container h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: #1a1a1a; /* O el color principal de tus títulos */
+  text-align: center;
+}
+
+/* Párrafos y texto general */
+.legal-container p {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333333;
+  text-align: justify; /* Mantiene el texto bien alineado a ambos lados */
+  margin-bottom: 32px;
+  word-wrap: break-word; /* Evita desbordamientos de texto largo en móviles */
+}
+
+/* Texto de "Última actualización" */
+.legal-container p em {
+  font-style: italic;
+  color: #666666;
+  display: block;
+  margin-bottom: 25px;
+}
+
+/* Versión Escritorio / Pantallas Grandes */
+@media (min-width: 1140px) {
+  .legal-container {
+    max-width: 1140px; /* Limite exacto requerido */
+    padding: 60px 0; /* Mantiene alineación vertical limpia */
+  }
+
+  .legal-container h1 {
+    font-size: 2.3rem; /* Título un poco más imponente en pantalla grande */
+    margin-bottom: 25px;
+  }
+
+  .legal-container p {
+    font-size: 1.05rem; /* Lectura muy cómoda en escritorio */
+    line-height: 1.8;
+  }
+}
+
 
