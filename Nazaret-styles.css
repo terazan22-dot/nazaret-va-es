@@ -21,10 +21,11 @@ body {
 
 /* 1. Barra superior con altura fija */
 .main-header {
+    position: sticky;
+    top: 0;
     z-index: 1000;
     padding: 0;
     height: 80px; /* Fijamos la altura de la barra para que no crezca */
-    position: relative;
     background-color: #ffffff; /* Ajusta al color de tu cabecera */
 }
 
@@ -866,81 +867,6 @@ body {
   text-transform: uppercase !important;
 }
 
-.featured-content h3 {
-  font-size: 1.35rem !important;
-  color: #1b365d !important;
-  margin-bottom: 10px !important;
-  font-weight: bold !important;
-}
-
-.featured-content p {
-  font-size: 0.98rem !important;
-  color: #555555 !important;
-  max-width: 750px !important;
-  margin: 0 auto 20px auto !important;
-  line-height: 1.6 !important;
-}
-
-/* Botón azul base */
-.portfolio-btn-featured,
-.portfolio-btn-featured:visited {
-  display: inline-block !important;
-  padding: 10px 22px !important;
-  font-size: 0.95rem !important;
-  font-weight: bold !important;
-  color: #ffffff !important; /* Texto blanco siempre */
-  background-color: #1b365d !important; /* Fondo azul fijo */
-  border-radius: 6px !important;
-  text-decoration: none !important;
-  transition: color 0.25s ease, transform 0.25s ease !important;
-}
-
-
-/* Estado al pasar el cursor (Hover) */
-.portfolio-btn-featured:hover,
-a.portfolio-btn-featured:hover {
-  background-color: #1b365d !important; /* Se mantiene en el mismo azul exacto */
-  color: #a38136 !important; /* Fuerza el cambio de color del texto al dorado */
-}
-
-/* Tarjeta destacada de la página web (Con sombra estática y sin elevación) */
-.featured-project-card {
-  background-color: #ffffff !important;
-  border-radius: 12px !important;
-  padding: 35px 30px !important;
-  margin-top: 35px !important;
-  text-align: center !important;
-  border-left: 5px solid #a38136 !important; /* Borde dorado lateral */
-  position: relative !important;
-  
-  /* Sombra suave que la separa del fondo blanco */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11) !important;
-}
-
-/* Responsive para dispositivos móviles (Celulares) */
-@media (max-width: 768px) {
-  
-  /* Ajustes para la tarjeta del proyecto web */
-  .featured-project-card {
-    padding: 25px 20px !important; /* Reduce el relleno interno */
-    margin-top: 25px !important;    /* Espacio superior más ajustado */
-  }
-
-  .featured-content h3 {
-    font-size: 1.2rem !important;  /* Tamaño de título cómodo para pantallas pequeñas */
-  }
-
-  .featured-content p {
-    font-size: 0.9rem !important;   /* Texto de descripción adaptado */
-    margin-bottom: 15px !important;
-  }
-
-  .portfolio-btn-featured {
-    width: 100% !important;         /* Hace que el botón ocupe todo el ancho en celular */
-    text-align: center !important;
-    padding: 12px 15px !important;  /* Un poco más de área táctil para facilitar el clic */
-  }
-}
 
 /* ==========================================
    MARCO PRINCIPAL CON EDIFICIO Y TARJETAS TRANSLÚCIDAS
@@ -1303,7 +1229,7 @@ a.portfolio-btn-featured:hover {
    ========================================== */
 .contact-section {
   padding: 80px 20px;
-  background-color: #fcfbf9;
+  background-color: #f4f6f8;;
 }
 
 .contact-tag {
