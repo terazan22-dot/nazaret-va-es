@@ -95,11 +95,12 @@ function closeMenu() {
   const navLinks = document.getElementById('nav-links');
   const icon = document.querySelector('#menu-toggle i');
   
-  if (navLinks && navLinks.classList.contains('open')) {
+  if (navLinks) {
     navLinks.classList.remove('open');
+    navLinks.classList.remove('active');
+}
     if (icon) {
       icon.classList.remove('fa-times');
       icon.classList.add('fa-bars');
     }
-  }
 }
